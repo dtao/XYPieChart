@@ -48,6 +48,8 @@
     [self.pieChartLeft setShowPercentage:YES];
     [self.pieChartLeft setPieBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1]];
     [self.pieChartLeft setPieCenter:CGPointMake(240, 240)];
+    [self.pieChartLeft setSliceBorderColor:[UIColor blackColor].CGColor];
+    [self.pieChartLeft setSliceBorderWidth:5.0];
     [self.pieChartLeft setUserInteractionEnabled:NO];
     
     [self.pieChartRight setDelegate:self];

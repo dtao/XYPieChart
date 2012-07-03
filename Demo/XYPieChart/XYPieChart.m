@@ -112,6 +112,8 @@ static NSUInteger kDefaultSliceZOrder = 100;
 @synthesize showLabel = _showLabel;
 @synthesize labelFont = _labelFont;
 @synthesize labelRadius = _labelRadius;
+@synthesize sliceBorderColor = _sliceBorderColor;
+@synthesize sliceBorderWidth = _sliceBorderWidth;
 @synthesize selectedSliceStroke = _selectedSliceStroke;
 @synthesize selectedSliceOffsetRadius = _selectedSliceOffsetRadius;
 @synthesize showPercentage = _showPercentage;
@@ -456,6 +458,13 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
 
         CGPathRef path = CGPathCreateArc(_pieCenter, _pieRadius, interpolatedStartAngle, interpolatedEndAngle);
         [obj setPath:path];
+        
+        if (_sliceBorderWidth > 0)
+        {
+            [obj setStrokeColor:_sliceBorderColor];
+            [obj setLineWidth:_sliceBorderWidth];
+        }
+        
         CFRelease(path);
         
         {
