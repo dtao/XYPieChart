@@ -466,8 +466,7 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
         CGPathRef path = CGPathCreateArc(_pieCenter, _pieRadius, interpolatedStartAngle, interpolatedEndAngle);
         [obj setPath:path];
         
-        if (_sliceBorderWidth > 0)
-        {
+        if (_sliceBorderWidth > 0 && pieLayers.count > 1) {
             [obj setStrokeColor:_sliceBorderColor];
             [obj setLineWidth:_sliceBorderWidth];
         }
